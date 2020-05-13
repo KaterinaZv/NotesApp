@@ -21,11 +21,9 @@ class NoteView extends EventEmitter {
 
   renderSidebar(notes) {
     const notesTitles = notes.map(note => ({
-      note,
+      ...note,
       title: note.text.split('\n')[0],
     }));
-
-
 
     const fragment = document.createDocumentFragment();
     notesTitles.forEach((note) => {

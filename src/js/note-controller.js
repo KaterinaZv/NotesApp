@@ -22,6 +22,7 @@ class NoteController {
     this.view.init(notes);
 
     this.model.SelectItemId = this.model.notes[0];
+
   }
 
   remove(note) {
