@@ -22,7 +22,7 @@ class NoteView extends EventEmitter {
   renderSidebar(notes) {
     const notesTitles = notes.map(note => ({
       ...note,
-      title: note.text == '' ? note.text = 'Пустая заметка' : note.text.split('\n')[0],
+      title: note.text ? note.text.split('\n')[0] : 'Пустая заметка' ,
     }));
 
     const fragment = document.createDocumentFragment();
