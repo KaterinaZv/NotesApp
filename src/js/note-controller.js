@@ -32,6 +32,9 @@ class NoteController {
     this.model.remove(note);
     this.view.renderSidebar(this.model.notes);
 
+    if (!this.view.renderSidebar(this.model.notes)) {
+      this.view.hideTextarea();
+    }
   }
 
   create() {
