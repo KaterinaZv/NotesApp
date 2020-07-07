@@ -41,15 +41,11 @@ class NoteView extends EventEmitter {
 
       removeIcon.addEventListener('click', (e) => {
         e.stopPropagation();
-
         this.emit(Actions.REMOVE_NOTE, note);
-
       });
-
 
       noteItem.appendChild(removeIcon);
       fragment.appendChild(noteItem);
-
     });
 
     this.sidebar.innerHTML = '';

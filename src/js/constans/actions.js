@@ -3,6 +3,7 @@ const Actions = {
   'CREATE_NOTE': 'CREATE_NOTE',
   'SET_NOTE_VIEW': 'SET_NOTE_VIEW',
   'REMOVE_NOTE': 'REMOVE_NOTE',
+  'REMOVE_UNSAVED_NOTE': 'REMOVE_UNSAVED_NOTE'
 };
 
 export default Actions;

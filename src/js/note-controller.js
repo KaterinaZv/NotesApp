@@ -1,6 +1,4 @@
 import Actions from './constans/actions';
-//import NoteModel from './note-model';
-//import NoteView from './note-view';
 
 class NoteController {
 
@@ -20,30 +18,22 @@ class NoteController {
   init() {
     const notes = this.model.load();
     this.view.init(notes);
-
-    this.model.SelectItemId = this.model.notes[0];
-
+    this.model.SelectItemId = this.model.notes[0].id;
   }
 
   remove(note) {
-    if (note.id === this.model.SelectItemId) {
-      this.view.hideTextarea();
-    }
     this.model.remove(note);
     this.view.renderSidebar(this.model.notes);
 
-    if (!this.view.renderSidebar(this.model.notes)) {
+    if (note.id === this.model.SelectItemId) {
       this.view.hideTextarea();
     }
   }
 
   create() {
     const note = this.model.create();
-
     this.view.renderSidebar(this.model.notes);
-
     this.changeNoteView(note);
-    
   }
 
   update(note) {
@@ -54,7 +44,6 @@ class NoteController {
   changeNoteView(note) {
     this.model.SelectItemId = note.id;
     this.view.setNote(note);
-
     this.view.showTextarea();
   }
 

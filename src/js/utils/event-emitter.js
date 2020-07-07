@@ -12,11 +12,13 @@ export default class EventEmitter {
   on(type, listener) {
     this.events[type] = this.events[type] || [];
     this.events[type].push(listener);
+
   }
 
   emit(type, ...args) {
     if (this.events[type]) {
       this.events[type].forEach(listener => listener(...args));
+      
     }
   }
 }

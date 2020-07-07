@@ -25,13 +25,11 @@ class NoteModel {
     this.notes.unshift(newNote);
 
     return newNote;
-
   }
 
   update(note) {
     this.notes = this.notes.map((item) => (item.id === note.id ? note : item));
     localStorage.setItem(Config.NOTES_LOCAL_STORAGE_KEY, JSON.stringify(this.notes));
-
   }
 
   remove(note) {
@@ -48,6 +46,7 @@ class NoteModel {
     this.notes.unshift(createEmptyNote());
     return this.notes;
   }
+  
 }
 
 export default NoteModel;
